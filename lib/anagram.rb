@@ -25,10 +25,10 @@ class Word
       return "You need to input actual words"
     end
 
-    word1_letters = word1.chars
-    if word1_letters.all?{|l| word2.chars.include?(l)}
+    
+    if word1.chars.all?{|l| word2.chars.include?(l)}
       return "These words are anagrams"
-    elsif word1_letters.none? {|l| word2.chars.include?(l)}
+    elsif word1.chars.none? {|l| word2.chars.include?(l)}
       return "These words have no letter matches and are antigrams"
     else
       return "These words have some matching letters but not all"
