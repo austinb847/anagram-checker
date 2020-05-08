@@ -1,10 +1,9 @@
 require('rspec')
 require('anagram')
 
-describe("Word#check_for_anagram") do
-  it("should return 'you need to input actual words' if either input words have no vowels") do
+describe("Word#check_for_vowels") do
+  it("should return false if input word has no vowels") do
     word = Word.new()
-    anagram = word.check_for_anagram("hi", "tlchk")
-    expect(anagram).to(eq('You need to input actual words'))
+    expect(word.check_for_vowels('tlchk')).to(eq(false))
   end
 end
