@@ -1,4 +1,8 @@
 class Word
+  def initialize(word1, word2)
+    @word1 = word1
+    @word2 = word2
+  end
 
 
   def check_for_vowels(word)
@@ -13,9 +17,9 @@ class Word
     word.downcase.gsub(/[^a-z]/,'')
   end
 
-  def check_for_anagram(word1, word2)
-    word1 = format_string(word1)
-    word2 = format_string(word2)
+  def check_for_anagram()
+    word1 = format_string(@word1)
+    word2 = format_string(@word2)
 
     if !check_for_vowels(word1) || !check_for_vowels(word2)
       return "You need to input actual words"
