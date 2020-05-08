@@ -25,3 +25,10 @@ describe("Word#check_for_anagram") do
   end
 
 end
+
+describe("Word#format_string") do
+  it("should remove spaces and punctuation from string, and set it to lower case") do
+    word = Word.new()
+    expect(word.format_string("HOw's it going?")).to(eq("howsitgoing"))
+  end
+end
