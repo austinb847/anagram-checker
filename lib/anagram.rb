@@ -20,6 +20,8 @@ class Word
     word1_letters = word1.chars
     if word1_letters.all?{|l| word2.chars.include?(l)}
       return "These words are anagrams"
+    elsif word1_letters.none? {|l| word2.chars.include?(l)}
+      return "These words have no letter matches and are antigrams"
     end
   end
 end
