@@ -9,7 +9,9 @@ class Word
     end
   end
 
-  # def check_for_anagram(word1, word2)
-
-  # end
+  def check_for_anagram(word1, word2)
+    if !check_for_vowels(word1) || !check_for_vowels(word2)
+      return "You need to input actual words"
+    end
+  end
 end
