@@ -19,4 +19,9 @@ describe("Word#check_for_anagram") do
     expect(word.check_for_anagram('ruby', 'bury')).to(eq('These words are anagrams'))
   end
 
+  it("should return 'These words have no letter matches and are antigrams' if there are no letter matches") do
+    word = Word.new()
+    expect(word.check_for_anagram('hi', 'bye')).to(eq('These words have no letter matches and are antigrams'))
+  end
+
 end
