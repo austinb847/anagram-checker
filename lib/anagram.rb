@@ -10,6 +10,9 @@ class Word
   end
 
   def check_for_anagram(word1, word2)
+    word1 = word1.downcase
+    word2 = word2.downcase
+    
     if !check_for_vowels(word1) || !check_for_vowels(word2)
       return "You need to input actual words"
     end
