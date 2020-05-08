@@ -25,7 +25,6 @@ class Word
       return "You need to input actual words"
     end
 
-    
     if word1.chars.all?{|l| word2.chars.include?(l)}
       return "These words are anagrams"
     elsif word1.chars.none? {|l| word2.chars.include?(l)}
