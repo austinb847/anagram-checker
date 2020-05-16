@@ -4,7 +4,7 @@ require('anagram')
 describe("Word#check_for_vowels") do
   it("should return false if input word has no vowels") do
     word = Word.new("tlchk", "bye")
-    expect(word.check_for_vowels('tlchk')).to(eq(false))
+    expect(word.check_for_vowels?('tlchk')).to(eq(false))
   end
 end
 
@@ -30,5 +30,12 @@ describe("Word#format_string") do
   it("should remove spaces and punctuation from string, and set it to lower case") do
     word = Word.new("HOw's it going?", "bye")
     expect(word.format_string("HOw's it going?")).to(eq("howsitgoing"))
+  end
+end
+
+describe("Word#get_letter_matches") do
+  it("should return how many letters match and which letters match") do
+    word = Word.new("cat", "batty")
+    expect(word.get_letter_matches()).to(eq("These words aren't anagrams but 2 letters match: a, t."))
   end
 end
