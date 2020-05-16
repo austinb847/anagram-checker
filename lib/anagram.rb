@@ -5,7 +5,7 @@ class Word
   end
 
 
-  def check_for_vowels(word)
+  def check_for_vowels?(word)
     if word.count("aeiouy") > 0
       true
     else
@@ -21,7 +21,7 @@ class Word
     word1 = format_string(@word1)
     word2 = format_string(@word2)
 
-    if !check_for_vowels(word1) || !check_for_vowels(word2)
+    if !check_for_vowels?(word1) || !check_for_vowels?(word2)
       return "You need to input actual words"
     end
 

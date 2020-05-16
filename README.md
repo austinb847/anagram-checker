@@ -9,7 +9,8 @@ _A Ruby class and method that checks whether two words or phrases are anagrams o
 ## Setup/Installation Requirements
 
 * _Step 1: Clone this repository https://github.com/austinb847/anagram-checker_
-* _Step 2: Install Gems_
+* _Step 2: Cd to new directory_
+* _Step 3: Run Bundle install_
 
 ## Known Bugs
 
