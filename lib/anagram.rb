@@ -31,6 +31,9 @@ class Word
     return "These words aren't anagrams but #{uniq_matches.count} letters match: #{uniq_matches.join(",")}."
   end
 
+  def actual_word?(word)
+  end
+
   def check_for_anagram()
     word1 = format_string(@word1)
     word2 = format_string(@word2)

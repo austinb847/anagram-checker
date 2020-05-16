@@ -39,3 +39,10 @@ describe("Word#get_letter_matches") do
     expect(word.get_letter_matches("Austin","Justin")).to(eq("These words aren't anagrams but 5 letters match: u,s,t,i,n."))
   end
 end
+
+describe("Word#actual_word?") do
+  it("should return false if input word has the same 3 letters consecutivly") do
+    word = Word.new("ccc", "bob")
+    expect(word.actual_word?("ccc")).to(eq(false))
+  end
+end
