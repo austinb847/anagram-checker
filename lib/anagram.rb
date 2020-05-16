@@ -32,6 +32,20 @@ class Word
   end
 
   def actual_word?(word)
+    count = 1
+    prev_letter = ""
+    word.chars.each do |letter|
+      if(prev_letter == letter)
+        count += 1
+      end
+      prev_letter = letter
+    end
+    
+    if count >= 3
+      return false
+    else
+      return true
+    end
   end
 
   def check_for_anagram()

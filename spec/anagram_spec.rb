@@ -42,7 +42,7 @@ end
 
 describe("Word#actual_word?") do
   it("should return false if input word has the same 3 letters consecutivly") do
-    word = Word.new("ccc", "bob")
-    expect(word.actual_word?("ccc")).to(eq(false))
+    word = Word.new("fleeew", "bob")
+    expect(word.actual_word?("fleeew")).to(eq(false))
   end
 end
