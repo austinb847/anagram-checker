@@ -35,7 +35,7 @@ end
 
 describe("Word#get_letter_matches") do
   it("should return how many letters match and which letters match") do
-    word = Word.new("cat", "batty")
-    expect(word.get_letter_matches()).to(eq("These words aren't anagrams but 2 letters match: a, t."))
+    word = Word.new("Austin", "Justin")
+    expect(word.get_letter_matches("Austin","Justin")).to(eq("These words aren't anagrams but 5 letters match: u,s,t,i,n."))
   end
 end
