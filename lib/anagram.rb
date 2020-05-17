@@ -18,7 +18,6 @@ class Word
   end
 
   def get_letter_matches(word1, word2)
-    # word1.chars.map{|l| word2.chars.include?(l)}
     matches = []
     word1.chars.each do |letter|
      word2.chars.each do |l|
