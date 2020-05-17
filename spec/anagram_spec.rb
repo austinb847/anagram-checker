@@ -24,6 +24,11 @@ describe("Word#check_for_anagram") do
     expect(word.check_for_anagram()).to(eq('These words have no letter matches and are antigrams'))
   end
 
+  it("should return 'A word can't have three or more consecutive letters. Input an actual word'") do
+    word = Word.new("fleeew", "bob")
+    expect(word.check_for_anagram()).to(eq("A word can't have three or more consecutive letters. Input an actual word"))
+  end
+
 end
 
 describe("Word#format_string") do
@@ -42,7 +47,7 @@ end
 
 describe("Word#actual_word?") do
   it("should return false if input word has the same 3 letters consecutivly") do
-    word = Word.new("fleeew", "bob")
-    expect(word.actual_word?("fleeew")).to(eq(false))
+    word = Word.new("ccc", "bob")
+    expect(word.actual_word?("ccc")).to(eq(false))
   end
 end

@@ -32,20 +32,8 @@ class Word
   end
 
   def actual_word?(word)
-    count = 1
-    prev_letter = ""
-    word.chars.each do |letter|
-      if(prev_letter == letter)
-        count += 1
-      end
-      prev_letter = letter
-    end
-    
-    if count >= 3
-      return false
-    else
-      return true
-    end
+    letter_chunks = word.each_char.chunk_while(&:==).map(&:join)
+    !letter_chunks.any?{|c| c.length >=3}
   end
 
   def check_for_anagram()
@@ -54,6 +42,10 @@ class Word
 
     if !check_for_vowels?(word1) || !check_for_vowels?(word2)
       return "You need to input actual words"
+    end
+
+    if !actual_word?(word1) || !actual_word?(word2) 
+      return "A word can't have three or more consecutive letters. Input an actual word"
     end
 
     if word1.chars.all?{|l| word2.chars.include?(l)}
