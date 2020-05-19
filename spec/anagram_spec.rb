@@ -29,6 +29,11 @@ describe("Word#check_for_anagram") do
     expect(word.check_for_anagram()).to(eq("A word can't have three or more consecutive letters. Input an actual word"))
   end
 
+  it("should return return how many letters match and which letters match if they are not antigrams or anagrams") do
+    word = Word.new("Austin", "Justin")
+    expect(word.check_for_anagram()).to(eq("These words aren't anagrams but 5 letters match: u,s,t,i,n."))
+  end
+
 end
 
 describe("Word#format_string") do
@@ -39,9 +44,9 @@ describe("Word#format_string") do
 end
 
 describe("Word#get_letter_matches") do
-  it("should return how many letters match and which letters match") do
+  it("should return all unique letter matches between both words as an array") do
     word = Word.new("Austin", "Justin")
-    expect(word.get_letter_matches("Austin","Justin")).to(eq("These words aren't anagrams but 5 letters match: u,s,t,i,n."))
+    expect(word.get_letter_matches("Austin","Justin")).to(eq(["u","s","t","i","n"]))
   end
 end
 

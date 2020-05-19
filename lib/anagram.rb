@@ -26,8 +26,7 @@ class Word
       end
     end
 
-    uniq_matches = matches.compact.uniq{|e| e}
-    return "These words aren't anagrams but #{uniq_matches.count} letters match: #{uniq_matches.join(",")}."
+    matches.compact.uniq{|e| e}
   end
 
   def actual_word?(word)
@@ -52,7 +51,8 @@ class Word
     elsif word1.chars.none? {|l| word2.chars.include?(l)}
       return "These words have no letter matches and are antigrams"
     else
-      get_letter_matches(word1, word2)
+      uniq_matches = get_letter_matches(word1, word2)
+      return "These words aren't anagrams but #{uniq_matches.count} letters match: #{uniq_matches.join(",")}."
     end
   end
 end
