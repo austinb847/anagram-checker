@@ -1,3 +1,5 @@
+require 'pry'
+
 class Word
   def initialize(word1, word2)
     @word1 = word1
@@ -18,15 +20,13 @@ class Word
   end
 
   def get_letter_matches(word1, word2)
-    matches = []
-    word1.chars.each do |letter|
-     word2.chars.each do |l|
-       if(l == letter)
-        matches.push(l)
-       end
-     end
+    matches = word1.chars.map do |letter|
+      if word2.chars.include?(letter)
+        letter
+      end
     end
-    uniq_matches = matches.uniq{|e| e}
+
+    uniq_matches = matches.compact.uniq{|e| e}
     return "These words aren't anagrams but #{uniq_matches.count} letters match: #{uniq_matches.join(",")}."
   end
 
