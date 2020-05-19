@@ -18,13 +18,15 @@ _A Ruby class and method that checks whether two words or phrases are anagrams o
 _None_
 
 ## Specifications
-
-| Behavior                                                                          	| Input             	| Output                                                 	|
-|-----------------------------------------------------------------------------------	|-------------------	|--------------------------------------------------------	|
-| Should return "you need to input actual words" if any of the words have no vowels 	| "tlchk", "hi"     	| "you need to input actual words"                       	|
-| Should return "these words are anagrams" if both words contain the same letters   	| "ruby","bury"     	| "these words are anagrams"                             	|
-| Should return "these words have no letter matches and are antigrams"              	| "hi","bye"        	| "these words have no letter matches and are antigrams" 	|
-| Should remove spaces and punctuation from string and set it to lower case         	| "HOw's it going?" 	| "howsitgoing"                                          	|
+| Behavior                                                                                  	| Input             	| Output                                                                       	|
+|-------------------------------------------------------------------------------------------	|-------------------	|------------------------------------------------------------------------------	|
+| Should return "you need to input actual words" if any of the words have no vowels         	| "tlchk", "hi"     	| "you need to input actual words"                                             	|
+| Should return "these words are anagrams" if both words contain the same letters           	| "ruby","bury"     	| "these words are anagrams"                                                   	|
+| Should return "these words have no letter matches and are antigrams"                      	| "hi","bye"        	| "these words have no letter matches and are antigrams"                       	|
+| Should remove spaces and punctuation from string and set it to lower case                 	| "HOw's it going?" 	| "howsitgoing"                                                                	|
+| Should return how many letters match and which letters match                              	| "Austin", "Justin 	| These words aren't anagrams but 5 letters match: u,s,t,i,n                   	|
+| Should return false if input word has the same 3 letters consecutively                    	| "cccbob"          	| false                                                                        	|
+| Should return "A word can't have three or more consecutive letters. Input an actual word" 	| "fleeew"          	| "A word can't have three or more consecutive letters. Input an actual word." 	|
 
 ## Technologies Used
 
